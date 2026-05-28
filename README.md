@@ -280,6 +280,4 @@ npm run dev
 
 ### License
 
-Proprietary - VedaAI Assignment Generator
-#   V e d a - a i  
- 
+Proprietary - VedaAI Assignment Generator 
