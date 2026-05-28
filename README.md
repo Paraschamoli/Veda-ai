@@ -2,6 +2,8 @@
 
 AI-powered assignment creation platform that generates professional exam papers using AI or procedural generation methods.
 
+---
+
 ## Architecture Overview
 
 ### Backend (Node.js/Express/TypeScript)
@@ -52,6 +54,8 @@ AI-powered assignment creation platform that generates professional exam papers 
    - Difficulty levels: Easy, Medium, Hard
    - Status tracking: pending → generating → completed/failed
 
+---
+
 ### Frontend (Next.js 14/React/TypeScript)
 
 **Technology Stack:**
@@ -83,6 +87,8 @@ AI-powered assignment creation platform that generates professional exam papers 
    - Print-specific styles for exam sheets
    - Animation keyframes for micro-interactions
 
+---
+
 ## Approach
 
 ### Backend Approach
@@ -107,6 +113,8 @@ AI-powered assignment creation platform that generates professional exam papers 
    - Automatic question cycling for larger assignments
    - Difficulty distribution algorithm
    - MCQ options and numerical problem templates
+
+---
 
 ### Frontend Approach
 
