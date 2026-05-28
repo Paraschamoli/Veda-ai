@@ -9,6 +9,7 @@ AI-powered assignment creation platform that generates professional exam papers 
 ### Backend (Node.js/Express/TypeScript)
 
 **Technology Stack:**
+
 - **Framework:** Express.js with TypeScript
 - **Database:** MongoDB (with JSON file fallback)
 - **Queue:** BullMQ with Redis (with in-memory fallback)
@@ -59,6 +60,7 @@ AI-powered assignment creation platform that generates professional exam papers 
 ### Frontend (Next.js 14/React/TypeScript)
 
 **Technology Stack:**
+
 - **Framework:** Next.js 14 with App Router
 - **UI Library:** React with TypeScript
 - **State Management:** Zustand
@@ -94,6 +96,7 @@ AI-powered assignment creation platform that generates professional exam papers 
 ### Backend Approach
 
 **Resilient Architecture:**
+
 - Implements graceful degradation for external dependencies
 - MongoDB connection fails → JSON file storage
 - Redis unavailable → In-memory queue
@@ -101,12 +104,14 @@ AI-powered assignment creation platform that generates professional exam papers 
 - Ensures system works in development without full infrastructure
 
 **Job Queue Pattern:**
+
 - Asynchronous assignment generation prevents API blocking
 - Progress updates via WebSocket keep users informed
 - Worker processes jobs independently of API server
 - Scalable architecture for concurrent generation requests
 
 **Dual Generation Strategy:**
+
 1. **AI Generation:** Uses OpenRouter API with GPT model for intelligent question generation
 2. **Procedural Fallback:** Subject-specific question banks with predefined templates
    - Physics, Chemistry, Math, Computer Science question databases
@@ -119,28 +124,34 @@ AI-powered assignment creation platform that generates professional exam papers 
 ### Frontend Approach
 
 **Multi-Step Wizard:**
+
 - Step 1: Assignment details configuration
 - Step 2: AI generation progress visualization
 - Step 3: Generated exam sheet review and print
 
 **Form Validation:**
+
 - Real-time validation with error messaging
 - Prevents negative/zero values for question counts and marks
 - Required field validation
 - User-friendly error display
 
 **Real-Time Updates:**
+
 - WebSocket connection for live progress tracking
 - Circular progress indicator with percentage
 - Dynamic status text updates
 - Automatic transition to completion state
 
 **User Experience:**
+
 - Drag-and-drop file upload for reference materials
 - Voice dictation simulation for additional instructions
 - Question type configurator with add/remove functionality
 - Print-optimized exam sheet layout
 - Responsive design for various screen sizes
+
+---
 
 ## Setup Instructions
 
@@ -154,16 +165,18 @@ AI-powered assignment creation platform that generates professional exam papers 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd assignment
    ```
 
 2. **Install dependencies**
+
    ```bash
    # Install all dependencies (backend + frontend)
    npm run install:all
-   
+
    # Or install separately
    cd backend && npm install
    cd frontend && npm install
@@ -172,6 +185,7 @@ AI-powered assignment creation platform that generates professional exam papers 
 3. **Configure environment variables**
 
    Backend (create `backend/.env`):
+
    ```bash
    PORT=5000
    MONGODB_URI=mongodb://localhost:27017/veda-ai
@@ -179,23 +193,25 @@ AI-powered assignment creation platform that generates professional exam papers 
    REDIS_PORT=6379
    OPENROUTER_API_KEY=your_openrouter_api_key_here
    ```
-   
+
    Use `backend/.env.example` as a template.
 
 4. **Start MongoDB** (optional)
+
    ```bash
    # Using Docker
    docker run -d -p 27017:27017 --name mongodb mongo:latest
-   
+
    # Or install locally
    # MongoDB will fall back to JSON storage if not available
    ```
 
 5. **Start Redis** (optional)
+
    ```bash
    # Using Docker
    docker run -d -p 6379:6379 --name redis redis:latest
-   
+
    # Or install locally
    # Redis will fall back to in-memory queue if not available
    ```
@@ -203,11 +219,13 @@ AI-powered assignment creation platform that generates professional exam papers 
 ### Running the Application
 
 **Option 1: Run both servers together**
+
 ```bash
 npm run dev
 ```
 
 **Option 2: Run servers separately**
+
 ```bash
 # Terminal 1 - Backend
 cd backend
@@ -256,21 +274,25 @@ npm run dev
 ### Troubleshooting
 
 **MongoDB Connection Failed:**
+
 - System automatically falls back to JSON file storage
 - Check MongoDB is running if you prefer database storage
 - Verify MONGODB_URI in .env file
 
 **Redis Connection Refused:**
+
 - System automatically uses in-memory queue
 - Redis is optional for development
 - Check Redis is running if you need distributed queue
 
 **OpenRouter API Errors:**
+
 - System falls back to procedural generation
 - Verify OPENROUTER_API_KEY is valid
 - Check API quota and rate limits
 
 **Frontend Cannot Connect to Backend:**
+
 - Ensure backend is running on port 5000
 - Check CORS configuration
 - Verify firewall settings
@@ -288,4 +310,4 @@ npm run dev
 
 ### License
 
-Proprietary - VedaAI Assignment Generator 
+Proprietary - VedaAI Assignment Generator
